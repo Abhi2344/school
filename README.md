@@ -1,43 +1,31 @@
-### School
+# My Custom Frappe App - Student Management
 
-School
+## 📌 Description
+This project is a simple Frappe application that manages student information.  
+It demonstrates the creation of a custom Doctype and record management.
 
-### Installation
+## ⚙️ System Requirements
+- Python 3.10+
+- Node.js 16+
+- MariaDB / MySQL
+- Redis
+- Frappe Framework v15
 
-You can install this app using the [bench](https://github.com/frappe/bench) CLI:
-
+## 🪜 Setup Instructions
 ```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app school
-```
+# 1. Install Frappe Bench
+pip install frappe-bench
 
-### Contributing
+# 2. Initialize bench and site
+bench init my-bench --frappe-branch version-15
+cd my-bench
+bench new-site mysite.localhost
 
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
+# 3. Get the app
+bench get-app https://github.com/<your-username>/my_custom_app.git
 
-```bash
-cd apps/school
-pre-commit install
-```
+# 4. Install app on site
+bench --site mysite.localhost install-app my_custom_app
 
-Pre-commit is configured to use the following tools for checking and formatting your code:
-
-- ruff
-- eslint
-- prettier
-- pyupgrade
-
-### CI
-
-This app can use GitHub Actions for CI. The following workflows are configured:
-
-- CI: Installs this app and runs unit tests on every push to `develop` branch.
-- Linters: Runs [Frappe Semgrep Rules](https://github.com/frappe/semgrep-rules) and [pip-audit](https://pypi.org/project/pip-audit/) on every pull request.
-
-
-### License
-
-mit
-# school
-# school
+# 5. Start the server
+bench start
